@@ -11,10 +11,14 @@
     "url": "git+https://github.com/gurraoptimus/vUpdate.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Gurraoptimus Development",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/gurraoptimus/vUpdate/issues"
   },
-  "homepage": "https://github.com/gurraoptimus/vUpdate#readme"
+  "homepage": "https://github.com/gurraoptimus/vUpdate#readme",
+  "dependencies": {
+    "electron": "^38.1.2",
+    "uaup-js": "^0.0.22"
+  }
 }
