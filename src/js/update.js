@@ -16,7 +16,7 @@ const updateOptions = {
     gitRepo: "vUpdate", // [Required] Your Repo Name
     gitUsername: "Gurraoptimus",  // [Required] Your GitHub Username.
 
-    appName: "vUpdate", //[Required] The Name of the app archive and the app folder.
+    appName: "vupdate", //[Required] The Name of the app archive and the app folder.
     appExecutableName: "vUpdate.exe", //[Required] The Executable of the Application to be Run after updating.
 
     progressBar: document.getElementById("download"), // {Default is null} [Optional] If Using Electron with a HTML Progressbar, use that element here, otherwise ignore
@@ -25,3 +25,7 @@ const updateOptions = {
 };
 
 uaup.Update(updateOptions);
+let isUpdateAvailable = await uaup.CheckForUpdate(updateOptions);
+if (isUpdateAvailable) {
+    // Do STUFF HERE
+}
