@@ -18,11 +18,11 @@
     "url": "https://github.com/gurraoptimus/vUpdate/issues"
   },
   "homepage": "https://github.com/gurraoptimus/vUpdate#readme",
-  "dependencies": {
+  "davdependencies": {
     "electron": "^38.1.2",
     "uaup-js": "^0.0.22"
   },
   "devDependencies": {
-    "electron-builder": "^26.0.12"
+    "electron-builder": "^26.0.20"
   }
 }

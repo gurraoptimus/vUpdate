@@ -1,5 +1,4 @@
-const uaup = require('uaup-js');
-
+import uaup from 'uaup-js';
 
 //This is Optional
 const defaultStages = {
@@ -13,11 +12,11 @@ const defaultStages = {
 };
 
 const updateOptions = {
-    gitRepo: "vUpdate", // [Required] Your Repo Name
-    gitUsername: "Gurraoptimus",  // [Required] Your GitHub Username.
+    gitRepo: "vupdate", // [Required] Your Repo Name
+    gitUsername: "gurraoptimus",  // [Required] Your GitHub Username.
 
     appName: "vupdate", //[Required] The Name of the app archive and the app folder.
-    appExecutableName: "vUpdate.exe", //[Required] The Executable of the Application to be Run after updating.
+    appExecutableName: "vupdate.exe", //[Required] The Executable of the Application to be Run after updating.
 
     progressBar: document.getElementById("download"), // {Default is null} [Optional] If Using Electron with a HTML Progressbar, use that element here, otherwise ignore
     label: document.getElementById("download-label"), // {Default is null} [Optional] If Using Electron, this will be the area where we put status updates using InnerHTML
@@ -25,7 +24,9 @@ const updateOptions = {
 };
 
 uaup.Update(updateOptions);
-let isUpdateAvailable = await uaup.CheckForUpdate(updateOptions);
-if (isUpdateAvailable) {
-    // Do STUFF HERE
-}
+(async () => {
+    let isUpdateAvailable = await uaup.CheckForUpdates(updateOptions);
+    if (isUpdateAvailable) {
+        // Do STUFF HERE
+    }
+})();
