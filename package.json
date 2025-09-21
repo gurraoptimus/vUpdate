@@ -20,9 +20,9 @@
   "homepage": "https://github.com/gurraoptimus/vUpdate#readme",
   "dependencies": {
     "electron": "^38.1.2",
-    "uaup-js": "0.0.22"
+    "uaup-js": "^0.0.22"
   },
   "devDependencies": {
-    "electron-builder": "26.0.20"
+    "electron-builder": "^26.0.12"
   }
 }
