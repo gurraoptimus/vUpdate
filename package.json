@@ -1,0 +1,20 @@
+{
+  "name": "vupdate",
+  "version": "1.0.0",
+  "description": "vUpdate",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gurraoptimus/vUpdate.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gurraoptimus/vUpdate/issues"
+  },
+  "homepage": "https://github.com/gurraoptimus/vUpdate#readme"
+}
