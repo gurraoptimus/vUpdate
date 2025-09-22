@@ -4,7 +4,9 @@
   "description": "vUpdate",
   "main": "index.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "build": "electron-builder",
+    "update": "electron-updater"
   },
   "repository": {
     "type": "git",
@@ -15,5 +17,10 @@
   "bugs": {
     "url": "https://github.com/gurraoptimus/vUpdate/issues"
   },
-  "homepage": "https://github.com/gurraoptimus/vUpdate#readme"
+  "homepage": "https://github.com/gurraoptimus/vUpdate#readme",
+  "dependencies": {
+    "electron": "^latest",
+    "electron-builder": "^latest",
+    "electron-updater": "^latest"
+  }
 }
