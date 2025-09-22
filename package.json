@@ -4,7 +4,7 @@
   "description": "vUpdate",
   "main": "index.js",
   "scripts": {
-    "test": "electron ."
+    "start": "electron ."
   },
   "repository": {
     "type": "git",
