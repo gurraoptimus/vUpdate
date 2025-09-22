@@ -10,7 +10,7 @@ vUpdate is a tool for managing and automating software version updates.
 - Generates update reports
 - Customizable update rules
 
-## Installation
+<!-- ## Installation
 
 ```bash
 npm install -g vupdate
@@ -20,7 +20,7 @@ npm install -g vupdate
 
 ```bash
 vupdate [options]
-```
+``` -->
 
 ## Contributing
 
