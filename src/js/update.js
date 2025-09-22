@@ -1,35 +1,27 @@
-const uaup = require("uaup-js");
+const autoUpdater = require("electron-updater");
 
+
+//This is Optional
 const defaultStages = {
-  Checking: "Checking...",
-  Found: "Update Found!",
-  NotFound: "No Update Found.",
-  Downloading: "Downloading...",
-  Unzipping: "Installing...",
-  Cleaning: "Finalizing...",
-  Launch: "Launching..."
+    Checking: "Checking...", // When Checking For Updates.
+    Found: "Update Found!",  // If an Update is Found.
+    NotFound: "No Update Found.", // If an Update is Not Found.
+    Downloading: "Downloading...", // When Downloading Update.
+    Unzipping: "Installing...", // When Unzipping the Archive into the Application Directory.
+    Cleaning: "Finalizing...", // When Removing Temp Directories and Files (ex: update archive and tmp directory).
+    Launch: "Launching..." // When Launching the Application.
 };
 
 const updateOptions = {
-  gitRepo: "vUpdate",              // Must match GitHub repo name exactly
-  gitUsername: "gurraoptimus",     // Your GitHub username
-  appName: "vupdate",              // Folder name inside the zip
-  appExecutableName: "vupdate.exe",// Executable inside that folder
+    gitRepo: "vupdate", // [Required] Your Repo Name
+    gitUsername: "gurraoptimus",  // [Required] Your GitHub Username.
 
-  // Only if running in Electron:
-  // progressBar: document.getElementById("download"),
-  // label: document.getElementById("download-label"),
+    appName: "vupdate", //[Required] The Name of the app archive and the app folder.
+    appExecutableName: "vupdate.exe", //[Required] The Executable of the Application to be Run after updating.
 
-  stageTitles: defaultStages,
+    progressBar: document.getElementById("download"), // {Default is null} [Optional] If Using Electron with a HTML Progressbar, use that element here, otherwise ignore
+    label: document.getElementById("download-label"), // {Default is null} [Optional] If Using Electron, this will be the area where we put status updates using InnerHTML
+    stageTitles: defaultStages, // {Default is defaultStages} [Optional] Sets the Status Title for Each Stage
 };
 
-uaup.Update(updateOptions);
-
-(async () => {
-  let isUpdateAvailable = await uaup.CheckForUpdates(updateOptions);
-  if (isUpdateAvailable) {
-    console.log("Update available!");
-  } else {
-    console.log("No update found.");
-  }
-})();
+autoUpdater.update(updateOptions);
