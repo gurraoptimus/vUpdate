@@ -19,8 +19,8 @@
   },
   "homepage": "https://github.com/gurraoptimus/vUpdate#readme",
   "dependencies": {
-    "electron": "^",
-    "electron-builder": "^",
-    "electron-updater": "^"
+    "electron": "",
+    "electron-builder": "",
+    "electron-updater": ""
   }
 }
