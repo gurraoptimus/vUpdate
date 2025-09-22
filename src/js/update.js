@@ -1,27 +1,31 @@
-const autoUpdater = require("electron-updater");
+const { autoUpdater } = require("electron-updater");
 
+autoUpdater.on("checking-for-update", () => {
+  console.log("Checking for update...");
+});
 
-//This is Optional
-const defaultStages = {
-    Checking: "Checking...", // When Checking For Updates.
-    Found: "Update Found!",  // If an Update is Found.
-    NotFound: "No Update Found.", // If an Update is Not Found.
-    Downloading: "Downloading...", // When Downloading Update.
-    Unzipping: "Installing...", // When Unzipping the Archive into the Application Directory.
-    Cleaning: "Finalizing...", // When Removing Temp Directories and Files (ex: update archive and tmp directory).
-    Launch: "Launching..." // When Launching the Application.
-};
+autoUpdater.on("update-available", (info) => {
+  console.log("Update available:", info);
+});
 
-const updateOptions = {
-    gitRepo: "vupdate", // [Required] Your Repo Name
-    gitUsername: "gurraoptimus",  // [Required] Your GitHub Username.
+autoUpdater.on("update-not-available", (info) => {
+  console.log("No update available.");
+});
 
-    appName: "vupdate", //[Required] The Name of the app archive and the app folder.
-    appExecutableName: "vupdate.exe", //[Required] The Executable of the Application to be Run after updating.
+autoUpdater.on("error", (err) => {
+  console.error("Error in auto-updater:", err);
+});
 
-    progressBar: document.getElementById("download"), // {Default is null} [Optional] If Using Electron with a HTML Progressbar, use that element here, otherwise ignore
-    label: document.getElementById("download-label"), // {Default is null} [Optional] If Using Electron, this will be the area where we put status updates using InnerHTML
-    stageTitles: defaultStages, // {Default is defaultStages} [Optional] Sets the Status Title for Each Stage
-};
+autoUpdater.on("download-progress", (progressObj) => {
+  console.log(`Download speed: ${progressObj.bytesPerSecond}`);
+  console.log(`Downloaded ${progressObj.percent}%`);
+});
 
-autoUpdater.update(updateOptions);
+autoUpdater.on("update-downloaded", (info) => {
+  console.log("Update downloaded; will install now");
+  autoUpdater.quitAndInstall();
+});
+
+app.on("ready", () => {
+  autoUpdater.checkForUpdatesAndNotify();
+});

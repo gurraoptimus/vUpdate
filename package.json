@@ -17,10 +17,5 @@
   "bugs": {
     "url": "https://github.com/gurraoptimus/vUpdate/issues"
   },
-  "homepage": "https://github.com/gurraoptimus/vUpdate#readme",
-  "dependencies": {
-    "electron": "",
-    "electron-builder": "",
-    "electron-updater": ""
-  }
+  "homepage": "https://github.com/gurraoptimus/vUpdate#readme"
 }
