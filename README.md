@@ -1,5 +1,6 @@
 # vUpdate
 
+**release** [:release](https://github.com/gurraoptimus/vUpdate/releases)
 vUpdate is a tool for managing and automating software version updates.
 
 ## Features
