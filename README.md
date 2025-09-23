@@ -1,4 +1,4 @@
-<img src="https://github.com/gurraoptimus/vUpdate/raw/main/src/icons/icon.ico" alt="vUpdate Logo" width="48" height="48">
+<img src="https://github.com/gurraoptimus/vUpdate/raw/main/src/icons/icon.ico" alt="vUpdate Logo" width="120" height="120">
 
 # vUpdate
 [![GitHub release](https://img.shields.io/github/v/release/gurraoptimus/vUpdate?style=flat-square)](https://github.com/gurraoptimus/vUpdate/releases)
