@@ -1,16 +1,17 @@
-# vUpdate
+<img src="https://github.com/gurraoptimus/vUpdate/raw/main/src/icons/icon.ico" alt="vUpdate Logo" width="48" height="48">
 
-**release** [:Versions](https://github.com/gurraoptimus/vUpdate/releases)
-`vUpdate` is a tool for managing and automating software version updates.
+# vUpdate
+[![GitHub release](https://img.shields.io/github/v/release/gurraoptimus/vUpdate?style=flat-square)](https://github.com/gurraoptimus/vUpdate/releases)
 
 ## Features
 
-- Automatically detects outdated dependencies
-- Supports multiple package managers
-- Generates update reports
-- Customizable update rules
+- **Automatic detection** of outdated dependencies
+- **Multi-package manager** support
+- **Detailed update reports** generation
+- **Customizable version rules** for updates
 
-<!-- ## Installation
+<!--
+## Installation
 
 ```bash
 npm install -g vupdate
@@ -20,11 +21,12 @@ npm install -g vupdate
 
 ```bash
 vupdate [options]
-``` -->
+```
+-->
 
 ## Contributing
 
-Contributions are welcome! Please open issues or submit pull requests.
+<p> We welcome contributions! Please open an issue or submit a pull request. </p>
 
 ## License
 
