@@ -2,13 +2,13 @@ const { app, BrowserWindow } = require('electron');
 
 function createWindow() {
   const win = new BrowserWindow({
-    width: 600,
+    width: 500,
     height: 200,
     webPreferences: {
       nodeIntegration: true,
       enableRemoteModule: true
     },
-    // icon: 'src/icon/icon.ico' // Set your custom icon path here
+    icon: 'src/icons/icon.ico', // Set your custom icon path here
     frame: false, // Remove window frame for a cleaner look
     maximizable: false, // Disable window maximization
     minimizable: false, // Disable window minimization
@@ -16,6 +16,7 @@ function createWindow() {
 });
 win.setTitle('vUpdate');
 win.loadFile('src/html/index.html');
+win.setMenu(null); // Remove default menu
 }
 app.whenReady().then(createWindow);
 app.on('window-all-closed', () => {

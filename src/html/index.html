@@ -2,20 +2,85 @@
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/app.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap" rel="stylesheet">
+    <title>vUpdate</title>
 </head>
-
 <body>
 
     <div id="control"></div>
 
-    <label for="download" id="download-label">UPDATE</label>
+    <!-- Logotype added below -->
+    <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; position: absolute; top: 0; left: 0; width: 100%;">
+      <svg id="logo-svg" width="100" height="100" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="vUpdate logo">
+        <defs>
+          <linearGradient id="blueGrad" x1="0.15" y1="0" x2="0.85" y2="1">
+            <stop offset="0%" stop-color="#4FC3FF"/>
+            <stop offset="50%" stop-color="#2196F3"/>
+            <stop offset="100%" stop-color="#0A66FF"/>
+          </linearGradient>
+          <radialGradient id="innerGlow" cx="50%" cy="30%" r="80%">
+            <stop offset="0%" stop-color="rgba(255,255,255,0.12)"/>
+            <stop offset="60%" stop-color="rgba(255,255,255,0)"/>
+          </radialGradient>
+          <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+            <feGaussianBlur stdDeviation="18" result="coloredBlur"/>
+            <feMerge>
+              <feMergeNode in="coloredBlur"/>
+              <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+          </filter>
+        </defs>
+        <rect width="100%" height="100%" fill="transparent"/>
+        <g>
+          <circle id="outerCircle" cx="512" cy="512" r="460" fill="url(#blueGrad)" filter="url(#glow)"/>
+          <circle cx="512" cy="512" r="460" fill="url(#innerGlow)"/>
+        </g>
+        <path
+          id="logoPath"
+          fill="#FFFFFF"
+          d="
+            M 300 220
+            L 420 220
+            L 512 580
+            L 604 220
+            L 724 220
+            L 548 804
+            L 476 804
+            Z
+          "
+          transform="translate(0,0) scale(1,1)"
+          filter="url(#glow)"
+        />
+      </svg>
+    <script>
+      // Logo animation
+      const outerCircle = document.getElementById('outerCircle');
+      const logoPath = document.getElementById('logoPath');
+      let scale = 1, direction = 1, opacity = 1, fadeDir = -1;
 
-    <progress id="download" max="100" value="0"></progress>
+      function animateLogo() {
+        scale += direction * 0.001; // Slower scaling
+        if (scale > 1.08 || scale < 0.92) direction *= -1;
+        outerCircle.setAttribute('transform', `scale(${scale},${scale}) translate(${512*(1-scale)},${512*(1-scale)})`);
 
+        opacity += fadeDir * 0.003; // Slower fading
+        if (opacity < 0.5 || opacity > 1) fadeDir *= -1;
+        logoPath.setAttribute('opacity', opacity);
+
+        requestAnimationFrame(animateLogo);
+      }
+      animateLogo();
+    </script>
+    </div>
+    <!-- Logotype end -->
+    <div id="update-container">
+        <label for="download" id="download-label"></label>
+        <progress id="download" max="100" value="0" aria-label="Download progress"></progress>
+    </div>
     <script src="../js/update.js"></script>
 </body>
-
 </html>

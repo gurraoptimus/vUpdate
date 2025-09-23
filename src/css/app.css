@@ -1,9 +1,9 @@
-body{
-    background: #1a1a1a;
-    color: white;
+body {
+    background: #222831;
+    color: #eeeeee;
 }
 
-#control{
+#control {
     -webkit-app-region: drag;
     width: 100%;
     height: 100vh;
@@ -14,20 +14,51 @@ body{
     background: transparent;
 }
 
-#download{
+#download {
     position: absolute;
     bottom: 15px;
     width: 80%;
     left: 10%;
     height: 25px;
+    background: #393e46;
+    color: #00adb5;
+    border-radius: 6px;
+    overflow: hidden;
+    border: none;
+    box-shadow: 0 0 10px #00adb5;
+    /* animation: glow 1.5s ease-in-out infinite alternate; */
 }
-
-#download-label{
+#download-label {
     position: absolute;
-    top: 20vh;
+    top: 50vh;
+    left: 50%;
+    transform: translateX(-50%);
     width: 97%;
     text-align: center;
     font-size: 48px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 300;
+    color: #00adb5;
+    animation: text-glow 1.5s ease-in-out infinite alternate;
+}
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 10px #00adb5, 0 0 20px #00adb5;
+        color: #00adb5;
+    }
+    100% {
+        box-shadow: 0 0 30px #00adb5, 0 0 60px #00adb5;
+        color: #fff;
+    }
+}
+
+@keyframes text-glow {
+    0% {
+        text-shadow: 0 0 10px #00adb5, 0 0 20px #00adb5;
+        color: #00adb5;
+    }
+    100% {
+        text-shadow: 0 0 30px #00adb5, 0 0 60px #00adb5;
+        color: #fff;
+    }
 }
