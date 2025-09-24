@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "electron .",
-    "dist": "electron-builder --publish always"
+    "dist": "electron-builder --publish never"
   },
   "repository": {
     "type": "git",
