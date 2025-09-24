@@ -34,7 +34,3 @@ const updateOptions = {
     
 }
 autoUpdater.update(updateOptions);
-autoUpdater.checkForUpdates();
-autoUpdater.on('error', (err) => {
-    console.error('Error in auto-updater:', err);
-});
