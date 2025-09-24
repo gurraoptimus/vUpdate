@@ -1,10 +1,11 @@
 {
   "name": "vupdate",
-  "version": "1.0.0",
+  "version": "1.0.5",
   "description": "Automatically detects outdated software and updates it to the latest version.",
   "main": "index.js",
   "scripts": {
     "start": "electron .",
+    "build": "electron-builder",
     "dist": "electron-builder --publish never"
   },
   "repository": {
@@ -22,9 +23,9 @@
     "productName": "vUpdate",
     "win": {
       "target": "nsis",
-      "icon": "src/icons/icon.ico"
+      "icon": "build/icons/icon.ico"
     },
-    "icon": "src/icons/icon.ico",
+    "icon": "build/icons/icon.ico",
     "publish": [
       {
         "provider": "github",

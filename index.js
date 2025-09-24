@@ -10,7 +10,7 @@ function createWindow() {
     },
     icon: 'src/icons/icon.ico', // Set your custom icon path here
     frame: false, // Remove window frame for a cleaner look
-    maximizable: false, // Disable window maximization
+    maximizable: true, // Disable window maximization
     minimizable: false, // Disable window minimization
     title: 'vUpdate', // Set custom window title
 });
