@@ -27,7 +27,6 @@ const updateOptions = {
     autoDownload: true, // {Default is true} [Optional] If you want to disable automatic downloading of updates, set this to false.
     autoInstallOnAppQuit: true, // {Default is true} [Optional] If you want to disable automatic installing of updates when the app quits, set this to false.
     
-    updateContainer: document.getElementById("update-container"),
     progressBar: document.getElementById("download"), // {Default is null} [Optional] If Using Electron with a HTML Progressbar, use that element here, otherwise ignore
     label: document.getElementById("download-label"), // {Default is null} [Optional] If Using Electron, this will be the area where we put status updates using InnerHTML
     stageTitles: defaultStages, // {Default is defaultStages} [Optional] Sets the Status Title for Each Stage
